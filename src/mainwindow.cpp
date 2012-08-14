@@ -452,7 +452,7 @@ void MainWindow::on_btnExport_clicked()
     exporter->addCollector("Focal Length (35mm equivalent)", "mm", focalLength35);
     exporter->addCollector("Aperture", "f/", aperture);
     exporter->addCollector("ISO", "ISO", iso);
-    exporter->addCollector("Exposure Time", "seconds", exposureTime);
+    exporter->addCollector("Exposure Time", "Seconds", exposureTime);
     exporter->addCollector("Camera", "Make & Model", camera);
 
     if (exporter->doExport()) {
