@@ -1,8 +1,7 @@
 # -------------------------------------------------
 # Project created by QtCreator 2010-08-14T20:45:54
 # -------------------------------------------------
-LIBS += -lexiv2 \
-    -lwsock32
+LIBS += -lexiv2
 TARGET = ExifStats
 TEMPLATE = app
 INCLUDEPATH += include/
