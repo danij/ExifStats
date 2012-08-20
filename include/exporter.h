@@ -29,6 +29,7 @@ typedef struct {
 
 class Exporter {
 public:
+    virtual ~Exporter() {}
     void addCollector(const QString& name,
                       const QString& columnHeader,
                       Collector* collector)

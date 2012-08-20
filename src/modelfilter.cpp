@@ -20,6 +20,10 @@ ModelFilter::ModelFilter(const QStringList& values) : list(values)
 {
 }
 
+ModelFilter::~ModelFilter()
+{
+}
+
 bool ModelFilter::match(Exiv2::ExifData &exifData)
 {
     QString model;

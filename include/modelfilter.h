@@ -24,6 +24,7 @@ class ModelFilter : public IFilter
 {
 public:
     ModelFilter(const QStringList& values);
+    virtual ~ModelFilter();
     virtual bool match(Exiv2::ExifData &exifData);
 private:
     const QStringList list;

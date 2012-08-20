@@ -20,6 +20,10 @@ MakeFilter::MakeFilter(const QStringList& values) : list(values)
 {
 }
 
+MakeFilter::~MakeFilter()
+{
+}
+
 bool MakeFilter::match(Exiv2::ExifData& exifData)
 {
     QString make;

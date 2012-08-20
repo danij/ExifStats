@@ -24,6 +24,7 @@ class MakeFilter : public IFilter
 {
 public:
     MakeFilter(const QStringList& values);
+    virtual ~MakeFilter();
     virtual bool match(Exiv2::ExifData &exifData);
 private:
     const QStringList list;
