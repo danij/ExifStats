@@ -147,7 +147,7 @@ int Collector::pictureCount()
 
 Entry* Collector::operator [](size_t index)
 {
-    if ((index < 0) || (index >= entryVector.size())) {
+    if (index >= entryVector.size()) {
         return 0;
     }
     return &entryVector[index];
