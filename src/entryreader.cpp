@@ -86,7 +86,7 @@ void EntryReader::run()
 
         try {
             Exiv2::Image::AutoPtr image =
-                Exiv2::ImageFactory::open(file.toStdWString());
+                Exiv2::ImageFactory::open(file.toStdString());
 
             if (image.get() == 0) {
                 continue;
