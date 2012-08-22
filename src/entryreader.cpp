@@ -95,101 +95,99 @@ void EntryReader::run()
             image->readMetadata();
             Exiv2::ExifData &exifData = image->exifData();
 
-            if ( ! exifData.empty()) {
-                match = true;
+            match = true;
 
-                try {
-                    make = QString(exifData["Exif.Image.Make"].toString().c_str());
-                    model = QString(exifData["Exif.Image.Model"].toString().c_str());
-                }
-                catch(Exiv2::AnyError& e) {}
+            try {
+                make = QString(exifData["Exif.Image.Make"].toString().c_str());
+                model = QString(exifData["Exif.Image.Model"].toString().c_str());
+            }
+            catch(Exiv2::AnyError& e) {}
 
-                if (filters.size() > 0) {
-                    foreach(IFilter* filter, filters) {
-                        if ( ! filter->match(exifData)) {
-                            match = false;
-                            break;
-                        }
-                    }
-                }
-
-                if ( ! match) {
-                    *counter += 1;
-                    continue;
-                }
-
-                focalLength = 0;
-
-                try {
-                    focalLength = exifData["Exif.Photo.FocalLength"].toFloat();
-                }
-                catch (Exiv2::AnyError& e) {}
-
-                focalLength35 = 0;
-
-                try {
-                    if (exifData["Exif.Photo.FocalLengthIn35mmFilm"].size() > 0) {
-                        focalLength35 =
-                            exifData["Exif.Photo.FocalLengthIn35mmFilm"].toFloat();
-                    }
-                    if (focalLength35 < 0) {
-                        focalLength35 = 0;
-                    }
-                }
-                catch (Exiv2::AnyError& e) {}
-
-                if (focalLength35 < 1) {
-                    focalLength35 = focalLength *
-                            get35mmFocalMultiplier(make, model);
-                }
-
-                fNumber = 0;
-
-                try {
-                    fNumber = exifData["Exif.Photo.FNumber"].toFloat();
-                }
-                catch (Exiv2::AnyError& e) {}
-
-                iso = 0;
-                try {
-                    iso = exifData["Exif.Photo.ISOSpeedRatings"].toFloat();
-                }
-                catch (Exiv2::AnyError& e) {}
-
-                exposureTime = 0;
-                try {
-                    exposureTime = exifData["Exif.Photo.ExposureTime"].toFloat();
-                }
-                catch (Exiv2::AnyError& e) {}
-
-                if (focalLength35 < 0.1) {
-                    focalLength35 = 0;
-                }
-
-                if ((focalLength > 0.1) && (fNumber > 0.1) &&
-                        (iso > 0) && (exposureTime > 0)) {
-                    if (collectors.find(FOCALLENGTH) != collectors.end()) {
-                        collectors[FOCALLENGTH]->addValue(focalLength);
-                    }
-                    if (collectors.find(FOCALLENGTH35) != collectors.end()) {
-                        collectors[FOCALLENGTH35]->addValue(focalLength35);
-                    }
-                    if (collectors.find(APERTURE) != collectors.end()) {
-                        collectors[APERTURE]->addValue(fNumber);
-                    }
-                    if (collectors.find(ISO) != collectors.end()) {
-                        collectors[ISO]->addValue(iso);
-                    }
-                    if (collectors.find(EXPOSURETIME) != collectors.end()) {
-                        collectors[EXPOSURETIME]->addExposureValue(exposureTime);
-                    }
-                    if (collectors.find(CAMERA) != collectors.end()) {
-                        collectors[CAMERA]->addValue(make + " " + model);
+            if (filters.size() > 0) {
+                foreach(IFilter* filter, filters) {
+                    if ( ! filter->match(exifData)) {
+                        match = false;
+                        break;
                     }
                 }
             }
+
+            if ( ! match) {
+                *counter += 1;
+                continue;
+            }
+
+            focalLength = 0;
+
+            try {
+                focalLength = exifData["Exif.Photo.FocalLength"].toFloat();
+            }
+            catch (Exiv2::AnyError& e) {}
+
+            focalLength35 = 0;
+
+            try {
+                if (exifData["Exif.Photo.FocalLengthIn35mmFilm"].size() > 0) {
+                    focalLength35 =
+                        exifData["Exif.Photo.FocalLengthIn35mmFilm"].toFloat();
+                }
+                if (focalLength35 < 0) {
+                    focalLength35 = 0;
+                }
+            }
+            catch (Exiv2::AnyError& e) {}
+
+            if (focalLength35 < 1) {
+                focalLength35 = focalLength *
+                        get35mmFocalMultiplier(make, model);
+            }
+
+            fNumber = 0;
+
+            try {
+                fNumber = exifData["Exif.Photo.FNumber"].toFloat();
+            }
+            catch (Exiv2::AnyError& e) {}
+
+            iso = 0;
+            try {
+                iso = exifData["Exif.Photo.ISOSpeedRatings"].toFloat();
+            }
+            catch (Exiv2::AnyError& e) {}
+
+            exposureTime = 0;
+            try {
+                exposureTime = exifData["Exif.Photo.ExposureTime"].toFloat();
+            }
+            catch (Exiv2::AnyError& e) {}
+
+            if (focalLength35 < 0.1) {
+                focalLength35 = 0;
+            }
+
+            if ((focalLength > 0.1) && (fNumber > 0.1) &&
+                    (iso > 0) && (exposureTime > 0)) {
+                if (collectors.find(FOCALLENGTH) != collectors.end()) {
+                    collectors[FOCALLENGTH]->addValue(focalLength);
+                }
+                if (collectors.find(FOCALLENGTH35) != collectors.end()) {
+                    collectors[FOCALLENGTH35]->addValue(focalLength35);
+                }
+                if (collectors.find(APERTURE) != collectors.end()) {
+                    collectors[APERTURE]->addValue(fNumber);
+                }
+                if (collectors.find(ISO) != collectors.end()) {
+                    collectors[ISO]->addValue(iso);
+                }
+                if (collectors.find(EXPOSURETIME) != collectors.end()) {
+                    collectors[EXPOSURETIME]->addExposureValue(exposureTime);
+                }
+                if (collectors.find(CAMERA) != collectors.end()) {
+                    collectors[CAMERA]->addValue(make + " " + model);
+                }
+            }
         }
-        catch (Exiv2::AnyError& e) { }
+        catch (...) { }
 
         *counter += 1;
     }
