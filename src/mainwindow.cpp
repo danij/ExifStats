@@ -190,7 +190,7 @@ void MainWindow::on_btnBrowse_clicked()
             this,
             "Select Folder",
             ui->txtFolderName->text()
-        ).replace('/', QString("\\"))
+        )
     );
 }
 
