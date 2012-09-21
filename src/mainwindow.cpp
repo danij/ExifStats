@@ -70,6 +70,13 @@ bool compareExtension(const QString& extension, const QStringList& filters) {
 
 void MainWindow::on_btnStart_clicked()
 {
+    if (ui->txtFolderName->text().trimmed().isEmpty()) {
+        QMessageBox messageBox;
+        messageBox.setText("No folder was specified");
+        messageBox.setIcon(QMessageBox::Warning);
+        messageBox.exec();
+        return;
+    }
     QDir folder(ui->txtFolderName->text());
     if ( ! folder.exists()) {
         QMessageBox messageBox;
