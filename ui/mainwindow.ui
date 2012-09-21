@@ -649,6 +649,13 @@
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QPushButton" name="btnAbout">
+          <property name="text">
+           <string>&amp;About</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </item>
      </layout>

@@ -12,7 +12,8 @@ SOURCES += src/main.cpp \
     src/makefilter.cpp \
     src/modelfilter.cpp \
     src/tabexporter.cpp \
-    src/htmlexporter.cpp
+    src/htmlexporter.cpp \
+    src/aboutdialog.cpp
 HEADERS += include/mainwindow.h \
     include/collector.h \
     include/entryreader.h \
@@ -21,8 +22,10 @@ HEADERS += include/mainwindow.h \
     include/modelfilter.h \
     include/htmlexporter.h \
     include/tabexporter.h \
-    include/exporter.h
-FORMS += ui/mainwindow.ui
+    include/exporter.h \
+    include/aboutdialog.h
+FORMS += ui/mainwindow.ui \
+    ui/aboutdialog.ui
 
 RESOURCES += \
     ui/images.qrc

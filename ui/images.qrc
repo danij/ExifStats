@@ -2,4 +2,7 @@
     <qresource prefix="/main/icon">
         <file alias="mainicon">program.ico</file>
     </qresource>
+    <qresource prefix="/images">
+        <file alias="donatebutton">btn_donate_SM.gif</file>
+    </qresource>
 </RCC>

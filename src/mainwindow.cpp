@@ -22,6 +22,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow), reader(0), makeFilter(0), modelFilter(0)
 {
     ui->setupUi(this);
+    aboutDialog = new AboutDialog(this);
+
 
     progressTimer = new QTimer(this);
     focalLength = new Collector();
@@ -479,4 +481,9 @@ void MainWindow::on_btnExport_clicked()
     }
 
     delete exporter;
+}
+
+void MainWindow::on_btnAbout_clicked()
+{    
+    aboutDialog->show();
 }

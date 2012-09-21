@@ -24,6 +24,7 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QMutex>
+#include "aboutdialog.h"
 #include "collector.h"
 #include "entryreader.h"
 #include "makefilter.h"
@@ -46,6 +47,7 @@ protected:
 
 private:
     Ui::MainWindow *ui;
+    AboutDialog *aboutDialog;
     QTimer* progressTimer;
     Collector* focalLength;
     Collector* focalLength35;
@@ -67,6 +69,7 @@ private slots:
     void on_btnBrowse_clicked();
     void on_btnStart_clicked();
     void progressTimer_timeout();
+    void on_btnAbout_clicked();
 };
 
 #endif // MAINWINDOW_H
