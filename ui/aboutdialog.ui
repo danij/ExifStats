@@ -34,7 +34,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Exif Statistics&lt;br/&gt;Version 1.0</string>
+        <string>Exif Statistics&lt;br/&gt;Version 1.1</string>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
