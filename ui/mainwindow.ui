@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>ExifStatistics v1.0</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/main/icon/mainicon</normaloff>:/main/icon/mainicon</iconset>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_10">
     <item row="0" column="0">
@@ -653,6 +657,8 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>

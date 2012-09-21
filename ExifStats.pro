@@ -23,3 +23,8 @@ HEADERS += include/mainwindow.h \
     include/tabexporter.h \
     include/exporter.h
 FORMS += ui/mainwindow.ui
+
+RESOURCES += \
+    ui/images.qrc
+
+RC_FILE = Exifstats.rc
