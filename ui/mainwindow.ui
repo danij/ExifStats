@@ -58,6 +58,10 @@
                  <property name="text">
                   <string>&amp;Browse</string>
                  </property>
+                 <property name="icon">
+                  <iconset resource="images.qrc">
+                   <normaloff>:/images/open</normaloff>:/images/open</iconset>
+                 </property>
                 </widget>
                </item>
               </layout>
@@ -159,6 +163,10 @@
          <widget class="QPushButton" name="btnStart">
           <property name="text">
            <string>&amp;Start</string>
+          </property>
+          <property name="icon">
+           <iconset resource="images.qrc">
+            <normaloff>:/images/play</normaloff>:/images/play</iconset>
           </property>
          </widget>
         </item>
@@ -640,6 +648,16 @@
           <property name="text">
            <string>E&amp;xport</string>
           </property>
+          <property name="icon">
+           <iconset resource="images.qrc">
+            <normaloff>:/images/save</normaloff>:/images/save</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>16</width>
+            <height>16</height>
+           </size>
+          </property>
          </widget>
         </item>
         <item>
@@ -647,12 +665,32 @@
           <property name="text">
            <string>&amp;Close</string>
           </property>
+          <property name="icon">
+           <iconset resource="images.qrc">
+            <normaloff>:/images/power</normaloff>:/images/power</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>16</width>
+            <height>16</height>
+           </size>
+          </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="btnAbout">
           <property name="text">
            <string>&amp;About</string>
+          </property>
+          <property name="icon">
+           <iconset resource="images.qrc">
+            <normaloff>:/images/about</normaloff>:/images/about</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>16</width>
+            <height>16</height>
+           </size>
           </property>
          </widget>
         </item>

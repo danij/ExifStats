@@ -4,5 +4,10 @@
     </qresource>
     <qresource prefix="/images">
         <file alias="donatebutton">btn_donate_SM.gif</file>
+        <file alias="play">glyphicons_173_play.png</file>
+        <file alias="open">glyphicons_144_folder_open.png</file>
+        <file alias="power">glyphicons_063_power.png</file>
+        <file alias="about">glyphicons_195_circle_info.png</file>
+        <file alias="save">glyphicons_342_hdd.png</file>
     </qresource>
 </RCC>
