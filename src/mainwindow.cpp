@@ -468,7 +468,8 @@ void MainWindow::on_btnExport_clicked()
     exporter->addCollector("Camera", "Make & Model", camera);
 
     if (exporter->doExport()) {
-        messageBox.setText("Done");
+        messageBox.setText("The export has been completed");
+        messageBox.setIcon(QMessageBox::Information);
         messageBox.exec();
     }
     else {
