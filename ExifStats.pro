@@ -27,4 +27,6 @@ FORMS += ui/mainwindow.ui
 RESOURCES += \
     ui/images.qrc
 
-RC_FILE = Exifstats.rc
+win32 {
+    RC_FILE = Exifstats.rc
+}
