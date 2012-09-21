@@ -7,6 +7,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
 {
     ui->setupUi(this);   
     setWindowFlags(windowFlags() & (~ Qt::WindowContextHelpButtonHint));
+    setFixedSize(this->width(), this->height());
 }
 
 AboutDialog::~AboutDialog()
