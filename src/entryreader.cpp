@@ -59,6 +59,11 @@ float get35mmFocalMultiplier(const QString& make, const QString& model)
                 if (canonSplit[2].startsWith("1Ds", Qt::CaseInsensitive)) {
                     return 1;
                 }
+                if (canonSplit[2].startsWith("1D", Qt::CaseInsensitive) &&
+                        canonSplit.size() > 3 &&
+                        canonSplit[3].startsWith("X", Qt::CaseInsensitive) ) {
+                    return 1;
+                }
                 if (canonSplit[2].startsWith("1D", Qt::CaseInsensitive)) {
                     return 1.3;
                 }
