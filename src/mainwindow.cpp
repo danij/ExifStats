@@ -287,6 +287,9 @@ void MainWindow::showResults()
     for (int i = 0; i < focalLength35->count(); i++) {
         item = new QTreeWidgetItem();
         item->setText(0, QString((*focalLength35)[i]->stringValue));
+        if (item->text(0) == "0") {
+            item->setText(0, "Unknown");
+        }
         item->setText(1, QString::number((*focalLength35)[i]->pictures));
         item->setText(2, QString::number((*focalLength35)[i]->percent, 'f', 2));
         item->setFont(0, font);
@@ -301,6 +304,9 @@ void MainWindow::showResults()
     for (int i = 0; i < focalLength35->count(); i++) {
         item = new QTreeWidgetItem();
         item->setText(0, QString((*focalLength35)[i]->stringValue));
+        if (item->text(0) == "0") {
+            item->setText(0, "Unknown");
+        }
         item->setText(1, QString::number((*focalLength35)[i]->pictures));
         item->setText(2, QString::number((*focalLength35)[i]->percent, 'f', 2));
         item->setFont(0, font);
