@@ -183,7 +183,7 @@ void EntryReader::run()
                     collectors[EXPOSURETIME]->addExposureValue(exposureTime);
                 }
                 if (collectors.find(CAMERA) != collectors.end()) {
-                    collectors[CAMERA]->addValue(make + " " + model);
+                    collectors[CAMERA]->addValue(make + " - " + model);
                 }
             }
         }
