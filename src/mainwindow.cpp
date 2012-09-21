@@ -137,11 +137,16 @@ void MainWindow::on_btnStart_clicked()
     makeList = make.split(',', QString::SkipEmptyParts);
     modelList = model.split(',', QString::SkipEmptyParts);
 
+    this->setCursor(Qt::WaitCursor);
+
     infoList << folder.entryInfoList(all, QDir::Files | QDir::Hidden);
     while (iterator.hasNext()) {
         folder.setPath(iterator.next());
         infoList << folder.entryInfoList(all, QDir::Files | QDir::Hidden);
     }
+
+    this->setCursor(Qt::ArrowCursor);
+
     for (int i = 0; i < infoList.count(); i++) {
         if (compareExtension(infoList.at(i).suffix(), extensionFilters)) {
             files << infoList.at(i).absoluteFilePath();
