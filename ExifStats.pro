@@ -2,7 +2,7 @@
 # Project created by QtCreator 2010-08-14T20:45:54
 # -------------------------------------------------
 LIBS += -lexiv2
-TARGET = ExifStats
+TARGET = ExifStatistics
 TEMPLATE = app
 INCLUDEPATH += include/
 SOURCES += src/main.cpp \
