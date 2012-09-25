@@ -103,8 +103,8 @@ void EntryReader::run()
             match = true;
 
             try {
-                make = QString(exifData["Exif.Image.Make"].toString().c_str());
-                model = QString(exifData["Exif.Image.Model"].toString().c_str());
+                make = QString(exifData["Exif.Image.Make"].toString().c_str()).trimmed();
+                model = QString(exifData["Exif.Image.Model"].toString().c_str()).trimmed();
             }
             catch(Exiv2::AnyError& e) {}
 
