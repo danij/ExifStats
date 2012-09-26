@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ExifStatistics v1.1</string>
+   <string>ExifStatistics v1.2</string>
   </property>
   <property name="windowIcon">
    <iconset resource="images.qrc">
@@ -39,6 +39,9 @@
             <layout class="QGridLayout" name="gridLayout">
              <item row="0" column="0">
               <widget class="QLabel" name="label">
+               <property name="whatsThis">
+                <string>The folder where the pictures to analyze are stored</string>
+               </property>
                <property name="text">
                 <string>Folder:</string>
                </property>
@@ -48,6 +51,9 @@
               <layout class="QHBoxLayout" name="horizontalLayout">
                <item>
                 <widget class="QLineEdit" name="txtFolderName">
+                 <property name="whatsThis">
+                  <string>The folder where the pictures to analyze are stored</string>
+                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -55,6 +61,9 @@
                </item>
                <item>
                 <widget class="QPushButton" name="btnBrowse">
+                 <property name="whatsThis">
+                  <string>Browse for a folder</string>
+                 </property>
                  <property name="text">
                   <string>&amp;Browse</string>
                  </property>
@@ -80,6 +89,9 @@
                </property>
                <item>
                 <widget class="QCheckBox" name="chkJPEG">
+                 <property name="whatsThis">
+                  <string>Analyze JPEG files (most commonly used format)</string>
+                 </property>
                  <property name="text">
                   <string>JPEG</string>
                  </property>
@@ -87,6 +99,9 @@
                </item>
                <item>
                 <widget class="QCheckBox" name="chkTIFF">
+                 <property name="whatsThis">
+                  <string>Analyze TIFF files</string>
+                 </property>
                  <property name="text">
                   <string>TIFF</string>
                  </property>
@@ -94,6 +109,9 @@
                </item>
                <item>
                 <widget class="QCheckBox" name="chkRAW">
+                 <property name="whatsThis">
+                  <string>Analyze RAW files</string>
+                 </property>
                  <property name="text">
                   <string>RAW</string>
                  </property>
@@ -132,26 +150,43 @@
             <layout class="QGridLayout" name="gridLayout_3">
              <item row="0" column="0">
               <widget class="QLabel" name="label_2">
+               <property name="whatsThis">
+                <string>Only search for pictures taken by this camera make(s)</string>
+               </property>
                <property name="text">
                 <string>Make:</string>
                </property>
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QLineEdit" name="txtMake"/>
+              <widget class="QLineEdit" name="txtMake">
+               <property name="whatsThis">
+                <string>Only search for pictures taken by this camera make(s)</string>
+               </property>
+              </widget>
              </item>
              <item row="1" column="0">
               <widget class="QLabel" name="label_3">
+               <property name="whatsThis">
+                <string>Only search for pictures taken using this camera model(s)</string>
+               </property>
                <property name="text">
                 <string>Model:</string>
                </property>
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QLineEdit" name="txtModel"/>
+              <widget class="QLineEdit" name="txtModel">
+               <property name="whatsThis">
+                <string>Only search for pictures taken using this camera model(s)</string>
+               </property>
+              </widget>
              </item>
              <item row="0" column="2">
               <widget class="QCheckBox" name="chkExceptMake">
+               <property name="whatsThis">
+                <string>Excludes the specified make</string>
+               </property>
                <property name="text">
                 <string>Except</string>
                </property>
@@ -159,6 +194,9 @@
              </item>
              <item row="1" column="2">
               <widget class="QCheckBox" name="chkExceptModel">
+               <property name="whatsThis">
+                <string>Excludes the specified model</string>
+               </property>
                <property name="text">
                 <string>Except</string>
                </property>
@@ -175,6 +213,9 @@
        <layout class="QHBoxLayout" name="horizontalLayout_5">
         <item>
          <widget class="QPushButton" name="btnStart">
+          <property name="whatsThis">
+           <string>Starts analyzing the pictures</string>
+          </property>
           <property name="text">
            <string>&amp;Start</string>
           </property>
@@ -186,6 +227,9 @@
         </item>
         <item>
          <widget class="QProgressBar" name="progressBar">
+          <property name="whatsThis">
+           <string>Displays the progress of analyzing pictures</string>
+          </property>
           <property name="maximum">
            <number>10000</number>
           </property>
@@ -224,6 +268,9 @@
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
              <widget class="QTreeWidget" name="treeFocal">
+              <property name="whatsThis">
+               <string>Displays the focal length statistics sorted by mm</string>
+              </property>
               <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
@@ -255,6 +302,9 @@
             </item>
             <item>
              <widget class="QTreeWidget" name="treeFocalSorted">
+              <property name="whatsThis">
+               <string>Displays the focal length statistics sorted by %</string>
+              </property>
               <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
@@ -297,6 +347,9 @@
            <layout class="QHBoxLayout" name="horizontalLayout_11">
             <item>
              <widget class="QTreeWidget" name="treeFocal35">
+              <property name="whatsThis">
+               <string>Displays the 35 mm equivalent focal length statistics sorted by mm</string>
+              </property>
               <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
@@ -328,6 +381,9 @@
             </item>
             <item>
              <widget class="QTreeWidget" name="treeFocal35Sorted">
+              <property name="whatsThis">
+               <string>Displays the 35mm equivalent focal length statistics sorted by %</string>
+              </property>
               <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
@@ -370,6 +426,9 @@
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
              <widget class="QTreeWidget" name="treeAperture">
+              <property name="whatsThis">
+               <string>Displays the aperture statistics sorted by aperture</string>
+              </property>
               <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
@@ -401,6 +460,9 @@
             </item>
             <item>
              <widget class="QTreeWidget" name="treeApertureSorted">
+              <property name="whatsThis">
+               <string>Displays the aperture statistics sorted by %</string>
+              </property>
               <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
@@ -443,6 +505,9 @@
            <layout class="QHBoxLayout" name="horizontalLayout_6">
             <item>
              <widget class="QTreeWidget" name="treeISO">
+              <property name="whatsThis">
+               <string>Displays the ISO statistics sorted by ISO</string>
+              </property>
               <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
@@ -474,6 +539,9 @@
             </item>
             <item>
              <widget class="QTreeWidget" name="treeISOSorted">
+              <property name="whatsThis">
+               <string>Displays the ISO statistics sorted by %</string>
+              </property>
               <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
@@ -516,6 +584,9 @@
            <layout class="QHBoxLayout" name="horizontalLayout_8">
             <item>
              <widget class="QTreeWidget" name="treeExposure">
+              <property name="whatsThis">
+               <string>Displays the exposure time statistics sorted by exposure time</string>
+              </property>
               <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
@@ -547,6 +618,9 @@
             </item>
             <item>
              <widget class="QTreeWidget" name="treeExposureSorted">
+              <property name="whatsThis">
+               <string>Displays the exposure time statistics sorted by %</string>
+              </property>
               <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
@@ -589,6 +663,9 @@
            <layout class="QHBoxLayout" name="horizontalLayout_10">
             <item>
              <widget class="QTreeWidget" name="treeCamera">
+              <property name="whatsThis">
+               <string>Displays the camera statistics sorted by make &amp; model</string>
+              </property>
               <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
@@ -620,6 +697,9 @@
             </item>
             <item>
              <widget class="QTreeWidget" name="treeCameraSorted">
+              <property name="whatsThis">
+               <string>Displays the camera statistics sorted by %</string>
+              </property>
               <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
@@ -659,6 +739,9 @@
        <layout class="QHBoxLayout" name="horizontalLayout_7">
         <item>
          <widget class="QPushButton" name="btnExport">
+          <property name="whatsThis">
+           <string>Exports the results</string>
+          </property>
           <property name="text">
            <string>E&amp;xport</string>
           </property>
@@ -676,6 +759,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="btnClose">
+          <property name="whatsThis">
+           <string>Closes the program</string>
+          </property>
           <property name="text">
            <string>&amp;Close</string>
           </property>
@@ -693,6 +779,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="btnAbout">
+          <property name="whatsThis">
+           <string>Displays information about the program</string>
+          </property>
           <property name="text">
            <string>&amp;About</string>
           </property>
