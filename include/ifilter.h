@@ -22,6 +22,11 @@
 class IFilter {
 public:
     virtual bool match(Exiv2::ExifData& exifData) = 0;
+    bool Except() { return except; }
+    void SetExcept(bool except) { this->except = except; }
+
+protected:
+    bool except;
 };
 
 #endif // IFILTER_H

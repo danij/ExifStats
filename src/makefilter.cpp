@@ -37,11 +37,11 @@ bool MakeFilter::match(Exiv2::ExifData& exifData)
     if (list.count() > 0) {
         foreach(QString item, list) {
             if (make.indexOf(item, 0, Qt::CaseInsensitive) != -1) {
-                return true;
+                return (except ? false : true);
                 break;
             }
         }
     }
 
-    return false;
+    return (except ? true : false);
 }

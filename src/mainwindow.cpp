@@ -179,10 +179,12 @@ void MainWindow::on_btnStart_clicked()
         reader->setData(&counter,files);
         if (makeList.count() > 0) {
             makeFilter = new MakeFilter(makeList);
+            makeFilter->SetExcept(ui->chkExceptMake->isChecked());
             reader->addFilter(makeFilter);
         }
         if (modelList.count() > 0) {
             modelFilter = new ModelFilter(modelList);
+            modelFilter->SetExcept(ui->chkExceptModel->isChecked());
             reader->addFilter(modelFilter);
         }
         reader->addCollector(FOCALLENGTH, focalLength);
