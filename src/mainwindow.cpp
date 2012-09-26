@@ -73,18 +73,12 @@ bool compareExtension(const QString& extension, const QStringList& filters) {
 void MainWindow::on_btnStart_clicked()
 {
     if (ui->txtFolderName->text().trimmed().isEmpty()) {
-        QMessageBox messageBox;
-        messageBox.setText("No folder was specified");
-        messageBox.setIcon(QMessageBox::Warning);
-        messageBox.exec();
+        QMessageBox::warning(this, windowTitle(), "No folder was specified");
         return;
     }
     QDir folder(ui->txtFolderName->text());
     if ( ! folder.exists()) {
-        QMessageBox messageBox;
-        messageBox.setText("Invalid Folder");
-        messageBox.setIcon(QMessageBox::Warning);
-        messageBox.exec();
+        QMessageBox::warning(this, windowTitle(), "Invalid Folder");
         return;
     }
     QStringList extensionFilters;
@@ -157,10 +151,7 @@ void MainWindow::on_btnStart_clicked()
     totalPictures = files.count();
 
     if (totalPictures < 1) {
-        QMessageBox messageBox;
-        messageBox.setText("No files found");
-        messageBox.setIcon(QMessageBox::Warning);
-        messageBox.exec();
+        QMessageBox::warning(this, windowTitle(), "No files were found");
         return;
     }
     else {
@@ -441,12 +432,9 @@ void MainWindow::on_btnClose_clicked()
 void MainWindow::on_btnExport_clicked()
 {
     QString fileName;
-    QMessageBox messageBox;
 
     if (focalLength->count() < 1) {
-        messageBox.setText("Nothing to save");
-        messageBox.setIcon(QMessageBox::Warning);
-        messageBox.exec();
+        QMessageBox::warning(this, windowTitle(), "Nothing to export");
         return;
     }
 
@@ -478,14 +466,12 @@ void MainWindow::on_btnExport_clicked()
     exporter->addCollector("Camera", "Make & Model", camera);
 
     if (exporter->doExport()) {
-        messageBox.setText("The export has been completed");
-        messageBox.setIcon(QMessageBox::Information);
-        messageBox.exec();
+        QMessageBox::information(this, windowTitle(),
+                                 "The export has been completed");
     }
     else {
-        messageBox.setText("Could not open " + fileName);
-        messageBox.setIcon(QMessageBox::Warning);
-        messageBox.exec();
+        QMessageBox::information(this, windowTitle(),
+                                 "Could not open " + fileName);
     }
 
     delete exporter;
