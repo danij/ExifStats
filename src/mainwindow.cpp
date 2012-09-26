@@ -22,8 +22,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow), reader(0), makeFilter(0), modelFilter(0)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() | Qt::WindowContextHelpButtonHint);
     aboutDialog = new AboutDialog(this);
-
 
     progressTimer = new QTimer(this);
     focalLength = new Collector();
