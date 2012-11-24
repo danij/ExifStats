@@ -19,6 +19,7 @@
 
 int main(int argc, char *argv[])
 {
+	//msmihai was here, prepare for the worst
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
